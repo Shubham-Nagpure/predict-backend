@@ -5,7 +5,7 @@ class CreateMatches < ActiveRecord::Migration[7.2]
       t.references :team_one, foreign_key: { to_table: :teams }, null: false
       t.references :team_two, foreign_key: { to_table: :teams }, null: false
       t.datetime :timing
-      t.references :winner, foreign_key: { to_table: :teams }, null: false
+      t.references :winner, foreign_key: { to_table: :teams }
 
       t.timestamps
     end

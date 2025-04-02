@@ -1,0 +1,34 @@
+teams:
+  1:
+    name: '404 Not Out'
+    short_name: '404'
+    team_size: 8
+  2:
+    name: 'Gully Gang'
+    short_name: 'GG'
+    team_size: 8
+  3:
+    name: 'Real Legends'
+    short_name: 'RL'
+    team_size: 8
+  4:
+    name: 'Marcos'
+    short_name: 'MRS'
+    team_size: 8
+  5:
+    name: 'Panthers'
+    short_name: 'PTR'
+    team_size: 8
+  6:
+    name: 'Shiv-Veers'
+    short_name: 'SV'
+    team_size: 8
+  7:
+    name: 'Striking Titans'
+    short_name: 'ST'
+    team_size: 8
+  8:
+    name: 'Thunder Strikerr'
+    short_name: 'TS'
+    team_size: 8
+

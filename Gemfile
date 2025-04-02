@@ -7,6 +7,7 @@ gem "sprockets-rails"
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 gem 'versionist'
+gem 'devise'
 gem 'jwt'
 # gem "sqlite3", ">= 1.4"
 # Use the Puma web server [https://github.com/puma/puma]

@@ -4,7 +4,7 @@ class CreateContests < ActiveRecord::Migration[7.2]
       t.integer :status
       t.string :name
       t.string :contest_type
-      t.references :matche
+      t.references :match
       t.integer :team_size
       t.text :description
       t.string :title

@@ -17,13 +17,23 @@
   </div>
 
   <div class="my-5">
-    <%= form.label :team_one_id %>
-    <%= form.number_field :team_one_id, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": match.errors[:team_one_id].none?, "border-red-400 focus:outline-red-600": match.errors[:team_one_id].any?}] %>
+    <%= form.label :team_one_id, "Select Team One" %>
+    <%= form.collection_select :team_one_id, Team.all, :id, :name,
+      { prompt: "Choose a team" },
+      class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full",
+              {"border-gray-400 focus:outline-blue-600": match.errors[:team_one_id].none?,
+               "border-red-400 focus:outline-red-600": match.errors[:team_one_id].any?}]
+    %>
   </div>
 
   <div class="my-5">
-    <%= form.label :team_two_id %>
-    <%= form.number_field :team_two_id, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": match.errors[:team_two_id].none?, "border-red-400 focus:outline-red-600": match.errors[:team_two_id].any?}] %>
+    <%= form.label :team_two_id, "Select Team Two" %>
+    <%= form.collection_select :team_two_id, Team.all, :id, :name,
+      { prompt: "Choose a team" },
+      class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full",
+              {"border-gray-400 focus:outline-blue-600": match.errors[:team_two_id].none?,
+               "border-red-400 focus:outline-red-600": match.errors[:team_two_id].any?}]
+    %>
   </div>
 
   <div class="my-5">

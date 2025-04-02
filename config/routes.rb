@@ -1,11 +1,19 @@
 Rails.application.routes.draw do
+  devise_for :users
 
   api_version(module: 'Api::V1', header: { name: 'Accept', value: 'application/vnd.predict.com; version=1' }) do
+    post 'sessions/login', to: 'sessions#login'
+    post 'sessions/register', to: 'sessions#register'
 
     resources :teams, only: %i[index show]
+    resources :matches, only: %i[index show]
+    resources :contests, only: %i[index show]
+    resources :contest_participants, only: %i[create]
   end
 
-  resources :tosses
+  resources :contests do
+    resources :contest_results, only: %i[create new]
+  end
   resources :matches
   resources :teams
   resources :users
@@ -21,4 +29,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  root :to => 'teams#index'
 end

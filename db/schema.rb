@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_04_02_111641) do
+ActiveRecord::Schema[7.2].define(version: 2025_04_03_073824) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,6 +48,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_04_02_111641) do
     t.integer "answer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "reward_points", default: 0
     t.index ["contest_id"], name: "index_contest_participants_on_contest_id"
     t.index ["user_id"], name: "index_contest_participants_on_user_id"
   end
@@ -63,10 +64,10 @@ ActiveRecord::Schema[7.2].define(version: 2025_04_02_111641) do
 
   create_table "contests", force: :cascade do |t|
     t.integer "status"
-    t.string "name"
-    t.string "contest_type"
-    t.bigint "matche_id"
-    t.integer "team_size"
+    t.integer "name"
+    t.integer "contest_type"
+    t.bigint "match_id"
+    t.integer "integer"
     t.text "description"
     t.string "title"
     t.datetime "deleted_at"
@@ -74,7 +75,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_04_02_111641) do
     t.datetime "end_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["matche_id"], name: "index_contests_on_matche_id"
+    t.index ["match_id"], name: "index_contests_on_match_id"
   end
 
   create_table "matches", force: :cascade do |t|
@@ -82,7 +83,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_04_02_111641) do
     t.bigint "team_one_id", null: false
     t.bigint "team_two_id", null: false
     t.datetime "timing"
-    t.bigint "winner_id", null: false
+    t.bigint "winner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["team_one_id"], name: "index_matches_on_team_one_id"
@@ -130,6 +131,12 @@ ActiveRecord::Schema[7.2].define(version: 2025_04_02_111641) do
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

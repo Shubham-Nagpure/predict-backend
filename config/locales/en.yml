@@ -41,3 +41,24 @@ en:
     found:
       success: "%{model_name} Retrieved Successfully"
       failure: "%{model_name} not found"
+  session:
+    user:
+      success: "User logged in successfully"
+      errors:
+        not_found: "User account does not exist"
+        invalid_password: "Password is invalid"
+        deactivated_account: 'User account is currently deactivated'
+      forgot_password:
+        success: "A password reset link has been sent to your email address. Please check your inbox (and spam folder) to reset your password"
+        failure: "Fail to serve request for forgot password"
+      reset_password_token:
+        expired: "Token is expired or invalid. Try generating a new token."
+        failure: "Failed to reset password."
+        success: "Password reset successfully."
+      logout:
+        success: 'Logged out successfully'
+  exception:
+    unauthorized: "You are not authorized to perform this action"
+    record_not_found: "Your session has expired. Please login again."
+    token_not_found: "The token is invalid"
+    token_expired: 'Your session has expired. Please login again.'

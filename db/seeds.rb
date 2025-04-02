@@ -7,3 +7,13 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+user = User.find_or_create_by(email: 'admin@joshsoftware.com', role_id: 'Admin')
+user.update_attribute('password', 'Josh@1234')
+
+YAML.load_file(Rails.root.join('config', 'team.yml'))['teams'].map do |key, value|
+  Team.find_or_create_by(name: value["name"],
+                          short_name: value["short_name"],
+                          team_size: value["team_size"])
+
+end
