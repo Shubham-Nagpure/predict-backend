@@ -28,4 +28,16 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  model:
+    create:
+      success: "%{model_name} Created Successfully"
+      failure: "Failed to create %{model_name}"
+    update:
+      success: "%{model_name} Updated Successfully"
+      failure: "Failed to update %{model_name}"
+    delete:
+      success: "%{model_name} Deleted Successfully"
+      failure: "Failed to delete %{model_name}"
+    found:
+      success: "%{model_name} Retrieved Successfully"
+      failure: "%{model_name} not found"

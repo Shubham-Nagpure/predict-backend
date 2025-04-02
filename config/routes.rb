@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+
+  api_version(module: 'Api::V1', header: { name: 'Accept', value: 'application/vnd.predict.com; version=1' }) do
+
+    resources :teams, only: %i[index show]
+  end
+
+  resources :tosses
+  resources :matches
+  resources :teams
+  resources :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

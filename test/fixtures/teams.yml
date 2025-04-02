@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  captain_id: 1
+  team_size: 1
+  deleted_at: 2025-04-02 12:24:19
+
+two:
+  name: MyString
+  captain_id: 1
+  team_size: 1
+  deleted_at: 2025-04-02 12:24:19

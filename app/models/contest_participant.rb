@@ -1,0 +1,2 @@
+class ContestParticipant < ApplicationRecord
+end

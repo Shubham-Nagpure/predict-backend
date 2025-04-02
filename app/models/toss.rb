@@ -1,0 +1,2 @@
+class Toss < ApplicationRecord
+end
